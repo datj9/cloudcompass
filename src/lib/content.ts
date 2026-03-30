@@ -1,3 +1,10 @@
+import { awsNetworkingModule, gcpNetworkingModule, azureNetworkingModule } from "./phases/phase1-networking";
+import { awsObservabilityModule, gcpObservabilityModule, azureObservabilityModule } from "./phases/phase2-observability";
+import { gcpIamModule, azureIamModule } from "./phases/phase3-iam";
+import { dynamodbTopic, cloudSqlTopic, firestoreTopic, cosmosdbTopic } from "./phases/phase4-storage-db";
+import { apiGatewayTopic, cloudFunctionsTopic } from "./phases/phase5-serverless";
+import { vpcLab, observabilityLab, multiCloudLab } from "./phases/phase6-labs";
+
 export type Level = "Beginner" | "Intermediate" | "Advanced";
 export type CloudName = "aws" | "gcp" | "azure";
 
@@ -263,6 +270,7 @@ kubectl expose deployment my-app \\
             },
           ],
         },
+        apiGatewayTopic as unknown as Topic,
       ],
     },
     {
@@ -365,6 +373,7 @@ aws rds create-db-instance \\
             },
           ],
         },
+        dynamodbTopic as unknown as Topic,
       ],
     },
     {
@@ -447,6 +456,8 @@ aws iam attach-role-policy \\
         },
       ],
     },
+    awsNetworkingModule as unknown as Module,
+    awsObservabilityModule as unknown as Module,
   ],
 };
 
@@ -623,6 +634,7 @@ kubectl get service hello --watch`,
             },
           ],
         },
+        cloudFunctionsTopic as unknown as Topic,
       ],
     },
     {
@@ -735,8 +747,13 @@ bq query \\
             },
           ],
         },
+        cloudSqlTopic as unknown as Topic,
+        firestoreTopic as unknown as Topic,
       ],
     },
+    gcpNetworkingModule as unknown as Module,
+    gcpObservabilityModule as unknown as Module,
+    gcpIamModule as unknown as Module,
   ],
 };
 
@@ -991,8 +1008,12 @@ az storage blob list \\
             },
           ],
         },
+        cosmosdbTopic as unknown as Topic,
       ],
     },
+    azureNetworkingModule as unknown as Module,
+    azureObservabilityModule as unknown as Module,
+    azureIamModule as unknown as Module,
   ],
 };
 
@@ -1888,6 +1909,14 @@ az monitor metrics alert create \\
       "Explore PagerDuty or OpsGenie integration for on-call routing",
     ],
   },
+  ...[vpcLab, observabilityLab, multiCloudLab].map((l) => ({
+    ...l,
+    desc: (l as unknown as { description: string }).description,
+    time: (l as unknown as { duration: string }).duration,
+    tags: [(l as unknown as { cloud: string }).cloud, (l as unknown as { category: string }).category].filter(Boolean),
+    free: true,
+    intro: (l as unknown as { description: string }).description,
+  })) as unknown as Lab[],
 ];
 
 // ─────────────────────────────────────────────────────────────────────────────

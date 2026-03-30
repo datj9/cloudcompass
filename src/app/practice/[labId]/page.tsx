@@ -55,7 +55,7 @@ export default async function LabPage({
           </h1>
           <p style={{ fontSize: "16px", color: "#94A3B8", lineHeight: 1.7, marginBottom: "20px" }}>{lab.intro}</p>
           <div style={{ display: "flex", flexWrap: "wrap", gap: "6px" }}>
-            {lab.tags.map((tag) => (
+            {(lab.tags ?? []).map((tag) => (
               <span key={tag} style={{ fontSize: "11px", padding: "3px 9px", borderRadius: "6px", backgroundColor: "#272F42", color: "#94A3B8", border: "1px solid #334155" }}>
                 {tag}
               </span>
