@@ -4,6 +4,11 @@ import { gcpIamModule, azureIamModule } from "./phases/phase3-iam";
 import { dynamodbTopic, cloudSqlTopic, firestoreTopic, cosmosdbTopic } from "./phases/phase4-storage-db";
 import { apiGatewayTopic, cloudFunctionsTopic } from "./phases/phase5-serverless";
 import { vpcLab, observabilityLab, multiCloudLab } from "./phases/phase6-labs";
+import { sqsSnsTopic, pubSubTopic, serviceBusTopic } from "./phases/phase7-messaging";
+import { codePipelineTopic, cloudBuildTopic, azureDevOpsTopic } from "./phases/phase8-cicd";
+import { route53Topic, gcpDnsCdnTopic, azureDnsFrontDoorTopic } from "./phases/phase9-dns-cdn";
+import { elasticacheTopic, memorystoreTopic, azureCacheTopic } from "./phases/phase10-caching";
+import { sagemakerBedrockTopic, vertexAiTopic, azureOpenAiTopic } from "./phases/phase11-ai-ml";
 
 export type Level = "Beginner" | "Intermediate" | "Advanced";
 export type CloudName = "aws" | "gcp" | "azure";
@@ -458,6 +463,41 @@ aws iam attach-role-policy \\
     },
     awsNetworkingModule as unknown as Module,
     awsObservabilityModule as unknown as Module,
+    {
+      id: "messaging",
+      title: "Messaging",
+      desc: "Queues, pub/sub notifications, and event-driven patterns",
+      category: "Messaging",
+      topics: [sqsSnsTopic as unknown as Topic],
+    },
+    {
+      id: "cicd",
+      title: "CI/CD",
+      desc: "Build pipelines, continuous integration, and deployment automation",
+      category: "CI/CD",
+      topics: [codePipelineTopic as unknown as Topic],
+    },
+    {
+      id: "dns-cdn",
+      title: "DNS & CDN",
+      desc: "Domain management, content delivery, and edge networking",
+      category: "DNS & CDN",
+      topics: [route53Topic as unknown as Topic],
+    },
+    {
+      id: "caching",
+      title: "Caching",
+      desc: "In-memory data stores for sub-millisecond performance",
+      category: "Caching",
+      topics: [elasticacheTopic as unknown as Topic],
+    },
+    {
+      id: "ai-ml",
+      title: "AI / ML",
+      desc: "Machine learning platforms and generative AI APIs",
+      category: "AI / ML",
+      topics: [sagemakerBedrockTopic as unknown as Topic],
+    },
   ],
 };
 
@@ -754,6 +794,41 @@ bq query \\
     gcpNetworkingModule as unknown as Module,
     gcpObservabilityModule as unknown as Module,
     gcpIamModule as unknown as Module,
+    {
+      id: "messaging",
+      title: "Messaging",
+      desc: "Global pub/sub messaging and event-driven architectures",
+      category: "Messaging",
+      topics: [pubSubTopic as unknown as Topic],
+    },
+    {
+      id: "cicd",
+      title: "CI/CD",
+      desc: "Serverless build pipelines and deployment automation",
+      category: "CI/CD",
+      topics: [cloudBuildTopic as unknown as Topic],
+    },
+    {
+      id: "dns-cdn",
+      title: "DNS & CDN",
+      desc: "Managed DNS, content delivery, and global edge network",
+      category: "DNS & CDN",
+      topics: [gcpDnsCdnTopic as unknown as Topic],
+    },
+    {
+      id: "caching",
+      title: "Caching",
+      desc: "Managed Redis and Valkey for in-memory caching",
+      category: "Caching",
+      topics: [memorystoreTopic as unknown as Topic],
+    },
+    {
+      id: "ai-ml",
+      title: "AI / ML",
+      desc: "Vertex AI platform, Gemini API, and AutoML",
+      category: "AI / ML",
+      topics: [vertexAiTopic as unknown as Topic],
+    },
   ],
 };
 
@@ -1014,6 +1089,41 @@ az storage blob list \\
     azureNetworkingModule as unknown as Module,
     azureObservabilityModule as unknown as Module,
     azureIamModule as unknown as Module,
+    {
+      id: "messaging",
+      title: "Messaging",
+      desc: "Enterprise messaging with queues, topics, and event routing",
+      category: "Messaging",
+      topics: [serviceBusTopic as unknown as Topic],
+    },
+    {
+      id: "cicd",
+      title: "CI/CD",
+      desc: "Multi-stage pipelines with environments and approvals",
+      category: "CI/CD",
+      topics: [azureDevOpsTopic as unknown as Topic],
+    },
+    {
+      id: "dns-cdn",
+      title: "DNS & CDN",
+      desc: "Global DNS, Front Door CDN, and edge delivery",
+      category: "DNS & CDN",
+      topics: [azureDnsFrontDoorTopic as unknown as Topic],
+    },
+    {
+      id: "caching",
+      title: "Caching",
+      desc: "Managed Redis tiers from development to enterprise",
+      category: "Caching",
+      topics: [azureCacheTopic as unknown as Topic],
+    },
+    {
+      id: "ai-ml",
+      title: "AI / ML",
+      desc: "Azure OpenAI Service and Azure Machine Learning",
+      category: "AI / ML",
+      topics: [azureOpenAiTopic as unknown as Topic],
+    },
   ],
 };
 

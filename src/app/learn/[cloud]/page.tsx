@@ -3,10 +3,30 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { getCloud, cloudMap } from "@/lib/content";
 import type { CloudName, Topic } from "@/lib/content";
+import type { Metadata } from "next";
 import { ArrowRight, BookOpen, CheckCircle2, Clock, ChevronRight } from "lucide-react";
+import { ProgressBanner } from "@/components/ProgressBanner";
 
 export function generateStaticParams() {
   return (Object.keys(cloudMap) as CloudName[]).map((c) => ({ cloud: c }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ cloud: string }>;
+}): Promise<Metadata> {
+  const { cloud } = await params;
+  const config = getCloud(cloud);
+  if (!config) return {};
+  return {
+    title: `Learn ${config.displayName}`,
+    description: config.description,
+    openGraph: {
+      title: `Learn ${config.displayName} — CloudCompass`,
+      description: config.description,
+    },
+  };
 }
 
 const levelColor: Record<string, string> = {
@@ -30,6 +50,7 @@ export default async function CloudPage({
   if (!config) notFound();
 
   const totalTopics = config.modules.reduce((s, m) => s + m.topics.length, 0);
+  const allTopicIds = config.modules.flatMap((m) => m.topics.map((t) => t.id));
 
   return (
     <div style={{ minHeight: "100vh", backgroundColor: "#0F172A" }}>
@@ -123,6 +144,11 @@ export default async function CloudPage({
               ))}
             </div>
           </div>
+        </section>
+
+        {/* Progress */}
+        <section style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px" }}>
+          <ProgressBanner topicIds={allTopicIds} color={config.color} />
         </section>
 
         {/* Modules */}

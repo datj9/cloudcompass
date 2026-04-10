@@ -3,7 +3,29 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { getCloud, getTopic, cloudMap } from "@/lib/content";
 import type { CloudName } from "@/lib/content";
+import type { Metadata } from "next";
 import { ChevronRight, Clock, ArrowLeft, ArrowRight } from "lucide-react";
+import { MarkAsReadButton } from "@/components/MarkAsReadButton";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ cloud: string; topic: string }>;
+}): Promise<Metadata> {
+  const { cloud: cloudParam, topic: topicParam } = await params;
+  const config = getCloud(cloudParam);
+  if (!config) return {};
+  const topic = getTopic(config, topicParam);
+  if (!topic) return {};
+  return {
+    title: `${topic.title} (${config.displayName})`,
+    description: topic.summary,
+    openGraph: {
+      title: `${topic.title} (${config.displayName}) — CloudCompass`,
+      description: topic.summary,
+    },
+  };
+}
 
 export function generateStaticParams() {
   const params: { cloud: string; topic: string }[] = [];
@@ -150,8 +172,13 @@ export default async function TopicPage({
           ))}
         </div>
 
+        {/* Mark as read */}
+        <div style={{ marginTop: "48px", paddingTop: "32px", borderTop: "1px solid #334155" }}>
+          <MarkAsReadButton topicId={topic.id} />
+        </div>
+
         {/* Prev / Next */}
-        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "64px", paddingTop: "32px", borderTop: "1px solid #334155" }}>
+        <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "12px", marginTop: "24px" }}>
           {prev ? (
             <Link href={`/learn/${cloudParam}/${prev.id}`} style={{ display: "flex", alignItems: "center", gap: "10px", padding: "16px 18px", borderRadius: "10px", border: "1px solid #334155", backgroundColor: "#1B2336", textDecoration: "none" }}>
               <ArrowLeft size={16} color="#94A3B8" />

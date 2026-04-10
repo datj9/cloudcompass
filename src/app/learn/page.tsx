@@ -12,6 +12,11 @@ import {
   Clock,
   BarChart2,
   Lock,
+  MessageSquare,
+  GitBranch,
+  Radio,
+  Layers,
+  Brain,
 } from "lucide-react";
 
 const clouds = [
@@ -54,6 +59,11 @@ const categories = [
   { icon: Shield, label: "IAM & Security", count: 14, desc: "Roles, policies, KMS, compliance" },
   { icon: Code2, label: "Serverless", count: 10, desc: "Functions, event-driven, queues" },
   { icon: TrendingUp, label: "Observability", count: 9, desc: "Logging, metrics, tracing, alerting" },
+  { icon: MessageSquare, label: "Messaging", count: 9, desc: "Queues, pub/sub, event streaming" },
+  { icon: GitBranch, label: "CI/CD", count: 9, desc: "Pipelines, builds, deployments" },
+  { icon: Radio, label: "DNS & CDN", count: 9, desc: "DNS, content delivery, edge networks" },
+  { icon: Layers, label: "Caching", count: 9, desc: "Redis, Memcached, in-memory data stores" },
+  { icon: Brain, label: "AI / ML", count: 9, desc: "ML platforms, GenAI APIs, model serving" },
 ];
 
 const recentTopics = [

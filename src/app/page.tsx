@@ -13,6 +13,11 @@ import {
   Globe,
   TrendingUp,
   Star,
+  MessageSquare,
+  GitBranch,
+  Radio,
+  Layers,
+  Brain,
 } from "lucide-react";
 
 const clouds = [
@@ -88,6 +93,11 @@ const categories = [
   { icon: Shield, label: "IAM & Security" },
   { icon: Code2, label: "Serverless" },
   { icon: TrendingUp, label: "Observability" },
+  { icon: MessageSquare, label: "Messaging" },
+  { icon: GitBranch, label: "CI/CD" },
+  { icon: Radio, label: "DNS & CDN" },
+  { icon: Layers, label: "Caching" },
+  { icon: Brain, label: "AI / ML" },
 ];
 
 const stats = [

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Navbar from "@/components/Navbar";
+import { labs } from "@/lib/content";
 import {
   Zap,
   Clock,
@@ -9,89 +10,6 @@ import {
   Lock,
   ArrowRight,
 } from "lucide-react";
-
-const labs = [
-  {
-    id: "deploy-static-site",
-    title: "Deploy a static site to object storage",
-    desc: "Host a static website on S3, GCS, or Azure Blob with public access and CDN.",
-    cloud: "All",
-    level: "Beginner",
-    time: "20 min",
-    tags: ["S3", "GCS", "Blob", "CDN"],
-    free: true,
-  },
-  {
-    id: "iam-least-privilege",
-    title: "IAM: Implement least-privilege access",
-    desc: "Create roles, attach policies, and verify access boundaries across clouds.",
-    cloud: "All",
-    level: "Intermediate",
-    time: "35 min",
-    tags: ["IAM", "Roles", "Policies", "Security"],
-    free: true,
-  },
-  {
-    id: "deploy-container-k8s",
-    title: "Deploy a containerized app to Kubernetes",
-    desc: "Build a Docker image and deploy to EKS, GKE, or AKS with a LoadBalancer service.",
-    cloud: "All",
-    level: "Intermediate",
-    time: "45 min",
-    tags: ["EKS", "GKE", "AKS", "Docker"],
-    free: true,
-  },
-  {
-    id: "serverless-api",
-    title: "Build a serverless REST API",
-    desc: "Create an HTTP endpoint using Lambda + API Gateway, Cloud Functions, or Azure Functions.",
-    cloud: "All",
-    level: "Beginner",
-    time: "30 min",
-    tags: ["Lambda", "API Gateway", "Cloud Functions"],
-    free: true,
-  },
-  {
-    id: "vpc-private-subnet",
-    title: "Configure a VPC with private subnets",
-    desc: "Set up a VPC, configure route tables, NAT gateway, and security groups.",
-    cloud: "All",
-    level: "Advanced",
-    time: "60 min",
-    tags: ["VPC", "NAT", "Subnets", "Security Groups"],
-    free: false,
-  },
-  {
-    id: "managed-db",
-    title: "Launch and connect to a managed database",
-    desc: "Provision RDS, Cloud SQL, or Azure Database for PostgreSQL with private access.",
-    cloud: "All",
-    level: "Intermediate",
-    time: "40 min",
-    tags: ["RDS", "Cloud SQL", "PostgreSQL"],
-    free: false,
-  },
-  {
-    id: "cloudwatch-alerts",
-    title: "Set up monitoring and alerting",
-    desc: "Create dashboards, metric alarms, and notification channels across clouds.",
-    cloud: "All",
-    level: "Intermediate",
-    time: "30 min",
-    tags: ["CloudWatch", "Cloud Monitoring", "Azure Monitor"],
-    free: true,
-  },
-  {
-    id: "terraform-infra",
-    title: "Provision cloud infrastructure with Terraform",
-    desc: "Write Terraform modules to deploy the same app across AWS, GCP, and Azure.",
-    cloud: "All",
-    level: "Advanced",
-    time: "75 min",
-    tags: ["Terraform", "IaC", "Multi-cloud"],
-    free: false,
-  },
-];
 
 const levelColor: Record<string, string> = {
   Beginner: "#22C55E",
