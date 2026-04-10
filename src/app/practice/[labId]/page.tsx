@@ -3,6 +3,7 @@ import Link from "next/link";
 import Navbar from "@/components/Navbar";
 import { getLab, labs } from "@/lib/content";
 import { ChevronRight, Clock, CheckCircle2, AlertTriangle, Lightbulb, ArrowLeft } from "lucide-react";
+import { CodeBlock } from "@/components/CodeBlock";
 
 export function generateStaticParams() {
   return labs.map((l) => ({ labId: l.id }));
@@ -96,15 +97,7 @@ export default async function LabPage({
                 <p style={{ fontSize: "14px", color: "#94A3B8", lineHeight: 1.7, marginBottom: step.code ? "16px" : "0", whiteSpace: "pre-line" }}>{step.body}</p>
 
                 {step.code && (
-                  <div style={{ borderRadius: "10px", overflow: "hidden", border: "1px solid #334155" }}>
-                    <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", backgroundColor: "#272F42", borderBottom: "1px solid #334155" }}>
-                      <span style={{ fontSize: "12px", fontWeight: 600, color: "#94A3B8" }}>{step.code.label}</span>
-                      <span style={{ fontSize: "11px", color: "#475569", fontFamily: "monospace" }}>{step.code.lang}</span>
-                    </div>
-                    <pre style={{ margin: 0, padding: "20px", backgroundColor: "#0D1526", overflowX: "auto", fontSize: "13px", lineHeight: 1.7, color: "#CBD5E1", fontFamily: "'JetBrains Mono', 'Fira Code', monospace" }}>
-                      <code>{step.code.snippet}</code>
-                    </pre>
-                  </div>
+                  <CodeBlock snippet={step.code.snippet} lang={step.code.lang} label={step.code.label} />
                 )}
 
                 {step.tip && (

@@ -6,6 +6,7 @@ import type { CloudName } from "@/lib/content";
 import type { Metadata } from "next";
 import { ChevronRight, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import { MarkAsReadButton } from "@/components/MarkAsReadButton";
+import { CodeBlock } from "@/components/CodeBlock";
 
 export async function generateMetadata({
   params,
@@ -158,15 +159,7 @@ export default async function TopicPage({
               </h2>
               <BodyText text={section.body} />
               {section.code && (
-                <div style={{ marginTop: "20px", borderRadius: "12px", overflow: "hidden", border: "1px solid #334155" }}>
-                  <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "10px 16px", backgroundColor: "#272F42", borderBottom: "1px solid #334155" }}>
-                    <span style={{ fontSize: "12px", fontWeight: 600, color: "#94A3B8" }}>{section.code.label}</span>
-                    <span style={{ fontSize: "11px", color: "#475569", fontFamily: "monospace" }}>{section.code.lang}</span>
-                  </div>
-                  <pre style={{ margin: 0, padding: "20px", backgroundColor: "#0D1526", overflowX: "auto", fontSize: "13px", lineHeight: 1.7, color: "#CBD5E1", fontFamily: "'JetBrains Mono', 'Fira Code', monospace" }}>
-                    <code>{section.code.snippet}</code>
-                  </pre>
-                </div>
+                <CodeBlock snippet={section.code.snippet} lang={section.code.lang} label={section.code.label} />
               )}
             </div>
           ))}
