@@ -129,8 +129,8 @@ export default function HomePage() {
               gap: "8px",
               padding: "6px 14px",
               borderRadius: "999px",
-              border: "1px solid rgba(34,197,94,0.3)",
-              backgroundColor: "rgba(34,197,94,0.08)",
+              border: "1px solid rgba(74,222,128,0.3)",
+              backgroundColor: "rgba(74,222,128,0.08)",
               marginBottom: "28px",
             }}
           >
@@ -139,7 +139,7 @@ export default function HomePage() {
                 width: "6px",
                 height: "6px",
                 borderRadius: "50%",
-                backgroundColor: "#22C55E",
+                backgroundColor: "#4ade80",
                 display: "inline-block",
               }}
             />
@@ -149,7 +149,7 @@ export default function HomePage() {
                 fontWeight: 600,
                 letterSpacing: "0.08em",
                 textTransform: "uppercase",
-                color: "#22C55E",
+                color: "#4ade80",
               }}
             >
               For Engineers, By Engineers
@@ -307,7 +307,7 @@ export default function HomePage() {
                   style={{
                     fontSize: "28px",
                     fontWeight: 800,
-                    color: "#22C55E",
+                    color: "#4ade80",
                     letterSpacing: "-0.5px",
                   }}
                 >
@@ -330,7 +330,7 @@ export default function HomePage() {
                 fontWeight: 600,
                 letterSpacing: "0.1em",
                 textTransform: "uppercase",
-                color: "#22C55E",
+                color: "#4ade80",
                 marginBottom: "12px",
               }}
             >
@@ -464,7 +464,7 @@ export default function HomePage() {
                   fontWeight: 600,
                   letterSpacing: "0.1em",
                   textTransform: "uppercase",
-                  color: "#22C55E",
+                  color: "#4ade80",
                   marginBottom: "12px",
                 }}
               >
@@ -506,14 +506,14 @@ export default function HomePage() {
                       width: "42px",
                       height: "42px",
                       borderRadius: "10px",
-                      backgroundColor: "rgba(34,197,94,0.1)",
+                      backgroundColor: "rgba(74,222,128,0.1)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       marginBottom: "16px",
                     }}
                   >
-                    <Icon size={20} color="#22C55E" />
+                    <Icon size={20} color="#4ade80" />
                   </div>
                   <h3 style={{ fontSize: "16px", fontWeight: 600, color: "#F8FAFC", marginBottom: "8px" }}>
                     {title}
@@ -564,7 +564,7 @@ export default function HomePage() {
                   cursor: "pointer",
                 }}
               >
-                <Icon size={24} color="#22C55E" />
+                <Icon size={24} color="#4ade80" />
                 {label}
               </Link>
             ))}
@@ -576,9 +576,9 @@ export default function HomePage() {
           <div
             style={{
               borderRadius: "20px",
-              border: "1px solid rgba(34,197,94,0.2)",
+              border: "1px solid rgba(74,222,128,0.2)",
               background:
-                "linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(66,133,244,0.06) 50%, rgba(255,153,0,0.06) 100%)",
+                "linear-gradient(135deg, rgba(74,222,128,0.06) 0%, rgba(66,133,244,0.06) 50%, rgba(255,153,0,0.06) 100%)",
               padding: "64px 48px",
               textAlign: "center",
             }}
@@ -614,7 +614,7 @@ export default function HomePage() {
                     border: "1px solid #334155",
                   }}
                 >
-                  <CheckCircle2 size={13} color="#22C55E" />
+                  <CheckCircle2 size={13} color="#4ade80" />
                   {item}
                 </span>
               ))}

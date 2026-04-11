@@ -1,5 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+/* ── Theme tokens (dark-mode adjusted from green-accent theme) ──── */
+:root {
+  --background: #0F172A;
+  --foreground: #F8FAFC;
+  --card: #1B2336;
+  --card-foreground: #F8FAFC;
+  --popover: #1E293B;
+  --popover-foreground: #CBD5E1;
+  --primary: #22C55E;
+  --primary-hover: #16A34A;
+  --primary-foreground: #0F172A;
+  --secondary: #272F42;
+  --secondary-foreground: #F8FAFC;
+  --muted: #272F42;
+  --muted-foreground: #94A3B8;
+  --accent: #4ade80;
+  --accent-foreground: #0F172A;
+  --destructive: #EF4444;
+  --destructive-foreground: #FEF2F2;
+  --border: #334155;
+  --border-hover: #475569;
+  --input: #1E293B;
+  --ring: #4ade80;
+  --radius: 0.75rem;
+
+  /* chart palette */
+  --chart-1: #4ade80;
+  --chart-2: #60a5fa;
+  --chart-3: #a78bfa;
+  --chart-4: #fbbf24;
+  --chart-5: #2dd4bf;
+
+  /* shadows */
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --shadow-sm: 0 1px 3px var(--shadow-color);
+  --shadow-md: 0 4px 12px var(--shadow-color);
+  --shadow-lg: 0 8px 24px var(--shadow-color);
+
+  /* surface (glass-like card feel) */
+  --surface: rgba(255, 255, 255, 0.03);
+  --surface-border: rgba(255, 255, 255, 0.06);
+
+  /* typography */
+  --font-sans: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+  --letter-spacing: 0.015em;
+}
 
 @layer base {
   * {
@@ -11,22 +59,23 @@
   }
 
   body {
-    background-color: #0F172A;
-    color: #F8FAFC;
-    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
     font-size: 16px;
     line-height: 1.6;
+    letter-spacing: var(--letter-spacing);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
 
   ::selection {
-    background: rgba(34, 197, 94, 0.25);
+    background: rgba(74, 222, 128, 0.25);
     color: #F8FAFC;
   }
 
   :focus-visible {
-    outline: 2px solid #22C55E;
+    outline: 2px solid var(--ring);
     outline-offset: 2px;
     border-radius: 4px;
   }
@@ -34,25 +83,26 @@
 
 @layer components {
   .card {
-    background-color: #1B2336;
-    border: 1px solid #334155;
-    border-radius: 12px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 24px;
     transition: all 0.2s ease;
   }
 
   .card-hover {
-    background-color: #1B2336;
-    border: 1px solid #334155;
-    border-radius: 12px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
     padding: 24px;
     transition: all 0.2s ease;
     cursor: pointer;
   }
 
   .card-hover:hover {
-    border-color: #475569;
-    background-color: #272F42;
+    border-color: var(--border-hover);
+    background-color: var(--secondary);
+    box-shadow: var(--shadow-md);
   }
 }
 

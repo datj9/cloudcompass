@@ -56,7 +56,7 @@ function renderInline(text: string): React.ReactNode[] {
     }
     if (part.startsWith("`") && part.endsWith("`")) {
       return (
-        <code key={i} style={{ background: "#272F42", padding: "2px 6px", borderRadius: "4px", fontSize: "13px", color: "#22C55E", fontFamily: "monospace" }}>
+        <code key={i} style={{ background: "#272F42", padding: "2px 6px", borderRadius: "4px", fontSize: "13px", color: "#4ade80", fontFamily: "var(--font-mono, monospace)" }}>
           {part.slice(1, -1)}
         </code>
       );

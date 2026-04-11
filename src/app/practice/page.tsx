@@ -40,7 +40,7 @@ export default function PracticePage() {
               fontWeight: 600,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "#22C55E",
+              color: "#4ade80",
               marginBottom: "12px",
             }}
           >
@@ -91,7 +91,7 @@ export default function PracticePage() {
                 color: "#94A3B8",
               }}
             >
-              <Icon size={14} color="#22C55E" />
+              <Icon size={14} color="#4ade80" />
               {label}
             </div>
           ))}
@@ -110,7 +110,7 @@ export default function PracticePage() {
               gap: "8px",
             }}
           >
-            <CheckCircle2 size={18} color="#22C55E" />
+            <CheckCircle2 size={18} color="#4ade80" />
             Free Labs
           </h2>
           <div
@@ -196,7 +196,7 @@ export default function PracticePage() {
                     gap: "4px",
                     fontSize: "13px",
                     fontWeight: 600,
-                    color: "#22C55E",
+                    color: "#4ade80",
                     marginTop: "auto",
                   }}
                 >

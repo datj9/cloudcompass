@@ -108,7 +108,7 @@ export default function LearnPage() {
               fontWeight: 600,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "#22C55E",
+              color: "#4ade80",
               marginBottom: "12px",
             }}
           >
@@ -258,14 +258,14 @@ export default function LearnPage() {
                       width: "38px",
                       height: "38px",
                       borderRadius: "8px",
-                      backgroundColor: "rgba(34,197,94,0.1)",
+                      backgroundColor: "rgba(74,222,128,0.1)",
                       display: "flex",
                       alignItems: "center",
                       justifyContent: "center",
                       flexShrink: 0,
                     }}
                   >
-                    <Icon size={18} color="#22C55E" />
+                    <Icon size={18} color="#4ade80" />
                   </div>
                   <div>
                     <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
@@ -275,8 +275,8 @@ export default function LearnPage() {
                           fontSize: "11px",
                           padding: "1px 7px",
                           borderRadius: "999px",
-                          backgroundColor: "rgba(34,197,94,0.1)",
-                          color: "#22C55E",
+                          backgroundColor: "rgba(74,222,128,0.1)",
+                          color: "#4ade80",
                           fontWeight: 500,
                         }}
                       >
@@ -297,7 +297,7 @@ export default function LearnPage() {
             <h2 style={{ fontSize: "22px", fontWeight: 700, color: "#F8FAFC", letterSpacing: "-0.3px" }}>
               Popular topics
             </h2>
-            <Link href="/learn?sort=popular" style={{ fontSize: "13px", color: "#22C55E", textDecoration: "none" }}>
+            <Link href="/learn?sort=popular" style={{ fontSize: "13px", color: "#4ade80", textDecoration: "none" }}>
               View all →
             </Link>
           </div>

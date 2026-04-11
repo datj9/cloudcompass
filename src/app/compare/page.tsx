@@ -318,7 +318,7 @@ const compareData: CompareRow[] = [
 ];
 
 const supportIcon = (s: Support) => {
-  if (s === "yes") return <CheckCircle2 size={16} color="#22C55E" />;
+  if (s === "yes") return <CheckCircle2 size={16} color="#4ade80" />;
   if (s === "partial") return <AlertCircle size={16} color="#F59E0B" />;
   return <MinusCircle size={16} color="#475569" />;
 };
@@ -339,7 +339,7 @@ export default function ComparePage() {
               fontWeight: 600,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
-              color: "#22C55E",
+              color: "#4ade80",
               marginBottom: "12px",
             }}
           >
@@ -517,7 +517,7 @@ export default function ComparePage() {
         >
           <span style={{ fontSize: "12px", color: "#64748B", fontWeight: 600 }}>Legend:</span>
           {[
-            { icon: <CheckCircle2 size={14} color="#22C55E" />, label: "Available" },
+            { icon: <CheckCircle2 size={14} color="#4ade80" />, label: "Available" },
             { icon: <AlertCircle size={14} color="#F59E0B" />, label: "Partial / Preview" },
             { icon: <MinusCircle size={14} color="#475569" />, label: "Not available" },
           ].map(({ icon, label }) => (

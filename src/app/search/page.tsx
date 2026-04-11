@@ -121,7 +121,7 @@ export default function SearchPage() {
               fontSize: "16px",
               outline: "none",
               boxSizing: "border-box",
-              caretColor: "#22C55E",
+              caretColor: "#4ade80",
             }}
           />
         </div>
