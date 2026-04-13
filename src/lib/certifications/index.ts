@@ -1,12 +1,10 @@
 import type { Certification, CertCloud } from "./types";
 export type { Certification, CertDomain, CertCloud, CertLevel, QuizQuestion, QuizResult, CertProgress } from "./types";
 
-// Certification imports — uncomment as content files are created
-// import { awsSaaC03 } from "./aws-saa-c03";
-// TODO: Add imports for each certification content file as they are created
+import { awsSaaC03 } from "./aws-saa-c03";
 
 export const certifications: Certification[] = [
-  // Will be populated as cert content files are created
+  awsSaaC03,
 ];
 
 export const certMap: Record<string, Certification> = Object.fromEntries(
