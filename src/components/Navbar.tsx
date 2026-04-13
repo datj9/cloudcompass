@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Cloud, BookOpen, GitCompare, Zap, Search, Menu, X } from "lucide-react";
+import { Cloud, BookOpen, GitCompare, Zap, Search, Menu, X, Award } from "lucide-react";
 import { useState } from "react";
 
 const navLinks = [
   { href: "/learn", label: "Learn", icon: BookOpen },
+  { href: "/certifications", label: "Certify", icon: Award },
   { href: "/compare", label: "Compare", icon: GitCompare },
   { href: "/practice", label: "Practice", icon: Zap },
   { href: "/search", label: "Search", icon: Search },

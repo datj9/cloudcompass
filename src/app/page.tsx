@@ -18,6 +18,7 @@ import {
   Radio,
   Layers,
   Brain,
+  Award,
 } from "lucide-react";
 
 const clouds = [
@@ -568,6 +569,74 @@ export default function HomePage() {
                 {label}
               </Link>
             ))}
+          </div>
+        </section>
+
+        {/* Get Cloud Certified */}
+        <section style={{ maxWidth: "1280px", margin: "0 auto", padding: "0 24px 64px" }}>
+          <div
+            style={{
+              borderRadius: "16px",
+              border: "1px solid rgba(245,158,11,0.2)",
+              background: "linear-gradient(135deg, rgba(245,158,11,0.06) 0%, rgba(74,222,128,0.06) 100%)",
+              padding: "48px",
+              display: "flex",
+              alignItems: "center",
+              gap: "32px",
+              flexWrap: "wrap",
+            }}
+          >
+            <div
+              style={{
+                width: "56px",
+                height: "56px",
+                borderRadius: "14px",
+                backgroundColor: "rgba(245,158,11,0.12)",
+                border: "1px solid rgba(245,158,11,0.25)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                flexShrink: 0,
+              }}
+            >
+              <Award size={26} color="#F59E0B" />
+            </div>
+            <div style={{ flex: 1, minWidth: "260px" }}>
+              <h2
+                style={{
+                  fontSize: "clamp(20px, 3vw, 28px)",
+                  fontWeight: 700,
+                  color: "#F8FAFC",
+                  letterSpacing: "-0.3px",
+                  marginBottom: "10px",
+                }}
+              >
+                Get Cloud Certified
+              </h2>
+              <p style={{ fontSize: "15px", color: "#94A3B8", lineHeight: 1.6 }}>
+                Domain-by-domain prep for AWS, GCP, and Azure certifications. Study key concepts, tackle exam tips, and test yourself with quizzes.
+              </p>
+            </div>
+            <Link
+              href="/certifications"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "8px",
+                padding: "12px 24px",
+                borderRadius: "10px",
+                backgroundColor: "#F59E0B",
+                color: "#0F172A",
+                fontSize: "14px",
+                fontWeight: 700,
+                textDecoration: "none",
+                whiteSpace: "nowrap",
+                flexShrink: 0,
+              }}
+            >
+              Start Certification Prep
+              <ArrowRight size={15} />
+            </Link>
           </div>
         </section>
 
