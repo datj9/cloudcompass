@@ -33,6 +33,8 @@ export function useCertProgress(certId: string) {
   const [allProgress, setAllProgress] = useState<AllProgress>({});
 
   useEffect(() => {
+    // SSR-safe hydration: defer localStorage read until after mount
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setAllProgress(loadFromStorage());
   }, []);
 
