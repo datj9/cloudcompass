@@ -26,6 +26,8 @@ export function useProgress() {
   const [readTopics, setReadTopics] = useState<Set<string>>(new Set());
 
   useEffect(() => {
+    // SSR-safe hydration: defer localStorage read until after mount
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setReadTopics(loadFromStorage());
   }, []);
 
